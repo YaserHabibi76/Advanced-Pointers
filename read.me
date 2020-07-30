@@ -1,0 +1,47 @@
+#AUTHOR
+Name: Yaser Habibi
+Email: yhabibi@uoguelph.ca
+Student Number: 1091939
+
+
+#PROGRAM DESCRIPTION 
+main: program that works with pointers, swapping of rows and columns, and copying using 
+		principles of shallow and deep copy
+
+#QUESTIONS
+Q1a/b: Create a struct that holds a 2d array. Then randomly initialize it. Then 			randomly pick two rows/columns to swap and then print them out.
+	- The fast approach is that we are swapping the pointers to each row
+	- The fast approach does not work for swapping columns because the pointers 	point to each row and hence the long approach must be used to swap the columns
+
+Q2a: printing the address and strutures. Also creating a deep copy and shallow 			copy.
+
+Q2b: changing values of certain array elements. Then printing
+
+Q2c: explaination: changes the values in a diagonal manner
+
+Q2d: free inside out, so free each element of array, then free the array itself
+
+#FUNCTIONS
+double_array: The Double_Array sturct holds an unitialized 2 dimensional double array, 
+		the row size, and the column size. This returns a pointer to a struct
+
+rand_double: That takes a Double_Array struct, and two values of tuypes double and 				initializes each element of the array in Double_Array to a randomly generated 			value between the two input values (inclusive)
+
+print_array: Takes a Double_Array struct pointer and prints the array with each element 
+		displaying 1 decimal place, with the column elements lining up vertically
+
+free_array: Takes a Double_Array struct pointer and frees the struct as well as 				the array within it
+
+swap_rows: Where the two integers are row numbers to be swapped. make sure each row 			number is valid according to the structure. If valid the rows are swapped and			the function returns 1, otherwise the rows are not swapped and the function 			returns 0.
+
+swap_columns: Where the two integer are column numbers to be swapped. Make sure each 			column number is valid according to the structure. If valid the columns address 		swapped and the function returns 1, otherwise the columns are not swapped and			the function returns 0.
+
+shallow_copy: That returns a copy of the Double_Array struct that is passed in (has a 			different pointer value) but holds the same content. Any change to the interior			of executable either the new or the old struct should be reflected in the other 
+		automatically, even though the pointers to the two structs are different.
+
+deep_copy: Returns a copy of the Double_Array struct that is passed in (has a different 		pointer value) but holds the same content. Now, however, any change to the 				interior of one struct should NOT be reflected in the other.  
+
+print_struct: Prints out many things such as the struct address, row size, array 				address, a header string
+
+Run executable: ./a2_q1
+				./a2_q2
